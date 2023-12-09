@@ -1,0 +1,50 @@
+<div class="bootstrap-wrapper">
+  <div class="container">
+    <div class="row mt20">
+      <div class="col-md-12 text-center">
+        <mat-card class="mt20">
+          <div class="container text-center"></div>
+          <h1 class="text-center mt20">Add New Category</h1>
+          <form (ngSubmit)="formSubmit()">
+            <!-- title -->
+            <mat-form-field class="full-width" appearance="fill">
+              <mat-label>Title</mat-label>
+              <input
+                [(ngModel)]="category.title"
+                autofocus
+                type="text"
+                name="title"
+                matInput
+                placeholder="Enter category title"
+                required
+              />
+            </mat-form-field>
+
+            <!-- Description -->
+            <mat-form-field class="full-width" appearance="fill">
+              <mat-label>Description</mat-label>
+              <textarea
+              [(ngModel)]="category.description"
+                name="description"
+                matInput
+                placeholder="Enter description"
+                rows="5"
+                required
+              ></textarea>
+            </mat-form-field>
+            <div class="container text-center">
+              <button
+                type="submit"
+                class="mr20 mb20"
+                mat-raised-button
+                color="primary"
+              >
+                Add
+              </button>
+            </div>
+          </form>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</div>

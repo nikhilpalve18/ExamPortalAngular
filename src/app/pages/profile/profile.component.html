@@ -1,0 +1,51 @@
+<mat-card>
+    <h1 class="text-center mt20">Profile</h1>
+    <mat-card-content>
+        <div class="bootstrap-wrapper">
+            <div class="container">
+                <div class="container text-center"> 
+                    <img
+                      src="../../../assets/logo.jpg"
+                      style="
+                        border: 1px solid rgb(34, 63, 178);
+                        height: 70px;
+                        width: 70px;
+                        border-radius: 50px;
+                      "
+                    />
+                    <h2>{{user.firstname}} {{user.lastname}}</h2>
+                </div>
+                <div class="row">
+                    <div class="col-md-8 offset-2">
+                        <table class="table text-center">
+                            <tr>
+                                <td>Username: </td>
+                                <td>{{user.username}}</td>
+                            </tr>
+                            <tr>
+                                <td>Email: </td>
+                                <td>{{user.email}}</td>
+                            </tr>
+                            <tr>
+                                <td>Mobile: </td>
+                                <td>{{user.phone}}</td>
+                            </tr>
+                            <tr>
+                                <td>Status: </td>
+                                <td>{{user.enabled?"Active":"Not Active"}}</td>
+                            </tr>
+                            <tr>
+                                <td>Role: </td>
+                                <td>{{user.authorities[0].authority}}</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </mat-card-content>
+    <div class="container text-center mt20 mb20">
+        <button mat-raised-button color="primary" class="mr20">Update</button>
+        <button mat-raised-button color="accent">Share</button>
+    </div>
+</mat-card>

@@ -1,0 +1,69 @@
+<mat-card style="margin-top: 10px" *ngFor="let q of quizzes">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>{{ q.title }}</mat-card-title>
+    <mat-card-subtitle>{{ q.category.title }}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <p style="margin-left: 55px">{{ q.description }}</p>
+  </mat-card-content>
+  <div class="container mb20 mt10" style="margin-left: 55px">
+    <!-- Questions -->
+    <button
+    routerLink="/admin/view-questions/{{ q.qId }}/{{q.title}}"
+      mat-stroked-button
+      color="primary"
+    >
+      Questions
+    </button>
+
+    <!-- Maximum marks -->
+    <button
+      routerLink="/admin/add-category/"
+      mat-stroked-button
+      color="primary"
+      class="ml20"
+    >
+      Max Marks: {{ q.maxMarks }}
+    </button>
+
+    <button
+      routerLink="/admin/add-category/"
+      mat-stroked-button
+      color="primary"
+      class="ml20"
+    >
+      Number of Questions: {{ q.numberOfQuestions }}
+    </button>
+    <button
+      routerLink="/admin/update-quiz/{{ q.qId }}"
+      mat-stroked-button
+      color="warn"
+      class="ml20"
+    >
+      Update
+    </button>
+
+    <button
+      routerLink="/admin/quizzes/"
+      mat-stroked-button
+      color="warn"
+      class="ml20"
+      (click)="deleteQuiz(q.qId)"
+    >
+      Delete
+    </button>
+
+    <button
+      routerLink="/admin/add-category/"
+      mat-stroked-button
+      color="primary"
+      class="ml20"
+    >
+      Attempts
+    </button>
+  </div>
+</mat-card>
+<div class="container text-center mt20 mb20">
+  <button routerLink="/admin/add-quiz/" mat-raised-button color="primary">Add New Quiz</button>
+</div>

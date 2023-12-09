@@ -1,0 +1,28 @@
+<mat-card>
+  <mat-list>
+    <div
+      style="font-size: 20px; margin-top: 10px"
+      class="mat-subheader ml20 mt20"
+    >
+      All Categories
+    </div>
+    <!-- category-list.component.html -->
+    <!-- category-list.component.html -->
+    <div *ngFor="let category of categories" class="card-container">
+      <div class="card-content">
+        <mat-divider class="mt20"></mat-divider>
+        <!-- <img mat-card-avatar [src]="category.imageUrl" alt="{{ category.name }} Image" /> -->
+        <div class="card-text ml20 mt20">
+          <mat-card-title>
+            <mat-icon mat-list-icon>category</mat-icon>
+            {{ category.title }}
+          </mat-card-title>
+          <mat-card-subtitle style="margin-left: 28px;">{{ category.description }}</mat-card-subtitle>
+        </div>
+      </div>
+    </div>
+  </mat-list>
+  <div class="container text-center mt20 mb20">
+    <button routerLink="/admin/add-category/" mat-raised-button color="primary">Add Category</button>
+  </div>
+</mat-card>
